@@ -230,12 +230,16 @@ body{
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    background: #f72d7a;
+    background: #4FD1C5;
     font-size: 16px;
     color: #fff;
-    box-shadow: rgba(0,0,0,0.4);
-
+    box-shadow: rgba(0,0,0,0.4);        
 }
+
+.btn:hover {
+    background-color: #399a8a;
+}
+
 .create-account{
     font-size: 14.5px;
     text-align: center;
