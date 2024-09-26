@@ -1,0 +1,565 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins",sans-serif;
+}
+
+/* Стили для body */
+ body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    background: url('backgroun3.jpg') no-repeat fixed;
+    background-size: cover;  /* Фон будет покрывать весь экран */
+    overflow-x: hidden;      /* Убираем горизонтальную прокрутку */
+}
+
+/* Шапка сайта */
+.header {
+    width: 100%;
+    padding: 20px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed; /* Фиксируем шапку */
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(30px);
+    box-shadow: 4px 6px rgba(0, 0, 0, 0.1);  /* Небольшая тень для навбара */
+    border-radius: 200px;
+    
+}
+
+/* Логотип */
+.logo-container {
+    flex-shrink: 0;
+    margin-right: 50px;
+    display: inline-block; /* Чтобы ссылка была корректной для блочного контента */
+}
+
+.logo-img {
+    width: 70px;
+    height: auto;
+}
+
+/* Навигация */
+.navbar {
+    display: flex;
+    gap: 50px;
+}
+
+.navbar a {
+    position: relative;
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    bottom: -5px;
+    border-radius: 5px;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: .5s ease;
+}
+
+.navbar a:hover::after {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Кнопки авторизации */
+.auth-buttons {
+    display: flex;
+    gap: 16px;
+    margin-left: auto;
+}
+
+.auth-buttons .btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 500;
+    width: 114px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.auth-buttons .login-btn {
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.auth-buttons .join-btn {
+    background: linear-gradient(90deg, #3BE075, #4AD5B7);
+    color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.auth-buttons .login-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    background-color: #f0f0f0;
+}
+
+.auth-buttons .join-btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(90deg, #34D483, #43C9B5);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Бокс с текстом */
+.blurred-box {
+    width: 300px;
+    height: 250px;
+    background: rgba(255, 255, 255, 0.2); /* Полупрозрачный фон */
+    backdrop-filter: blur(5px);  /* Эффект блюра внутри */
+    border-radius: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.3); /* Полупрозрачная обводка */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Тень вокруг */
+    margin-top: 175px;
+    margin-left: 90px;
+    padding: 20px;
+}
+
+.blurred-box p {
+    color: white;
+    font-size: 18px;
+    text-align: left;
+    margin: 0;
+    padding-top: 0;
+}
+
+/* Слайдер */
+.slider {
+    position: relative;
+    max-width: 475px;
+    margin: auto;
+    overflow: hidden; /* Скрываем всё за пределами слайдера */
+    border-radius: 25px;
+    bottom: 1px;
+    right: -480px;
+    height: 275px;
+    overflow: hidden;    /* Ограничиваем контент по границам блока */
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+    height: 100%;
+    gap: 0;  /* Убираем пробелы между слайдами */
+
+}
+
+.slide {
+    min-width: 100%; /* Каждая слайд-зона занимает 100% ширины контейнера */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: white;   
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 20px;
+    transition: all 0.3s ease; /* Плавный переход */
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover, .next:hover {
+    background: rgba(0, 0, 0, 0.7); /* Затемняем при наведении */
+    transform: translateY(-50%) scale(1.2); /* Увеличиваем при наведении */
+}
+
+/* Стили для точек */
+.slider-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+
+.slider-dot {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.5); /* Полупрозрачная точка */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Плавное изменение цвета */
+}
+
+.slider-dot.active {
+    background-color: rgba(255, 255, 255, 1); /* Полностью белая точка для активного слайда */
+}
+
+.slider-dot:hover {
+    background-color: rgba(255, 255, 255, 0.8); /* Затемнение при наведении */
+}
+
+/* Второй блок */
+.content-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #110A0A, #AE8585);
+    padding: 50px;
+    color: #ffffff;
+    margin-top: 100px;
+    position: relative;
+}
+
+.text-side {
+    width: 50%;
+    padding-right: 20px;
+}
+
+.text-side p {
+    margin: 10px 0;
+}
+
+.line-1 {
+    color: #000000;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.line-2 {
+    color: #34CB66;
+    font-size: 22px;
+}
+
+.image-side {
+    width: 45%;
+    display: flex;
+    position: relative; 
+}
+
+.image1, .image2 {
+    width: 45%;
+    height: auto;
+
+}
+
+.image1 {
+    position: absolute ; /* Абсолютное позиционирование */
+    top: -10px;
+    left: 225px;
+    width: 50%;
+    height: auto;
+}
+
+.image2 {
+    position: relative ;
+    top: 80px;
+    left: 312px;
+    width: 35%;
+    height: auto;
+}
+
+/* полублок */
+.image-with-text {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 223px;
+    overflow: hidden;
+}
+
+.image-with-text .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Это заставит изображение занимать весь блок */
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-110%, -50%);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон под текстом */
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+
+/* Секция карточек */
+.card-section {
+    background: linear-gradient(135deg, #3AE171, #4AD5B8);
+    padding: 50px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 карточки в ряду */
+    gap: 20px; /* Расстояние между карточками */
+}
+
+.card {
+    background-color: #B2B2B2;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Увеличение карточки при наведении */
+}
+
+.card-header {
+    background-color: #000000;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Относительное позиционирование для использования absolute */
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.card-header p {
+    margin: 0;
+    flex-grow: 1; /* Позволяет тексту занимать всё оставшееся пространство */
+}
+
+.small-icon {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 10px;
+}
+
+.card-body {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.main-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.card-body:hover .main-image {
+    transform: scale(1.1); /* Увеличение картинки при наведении */
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.btn img {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+.btn-link {
+    background-color: #00C850;
+}
+
+.btn-copy {
+    background-color: #FAC800;
+}
+
+.btn:hover {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Анимация блеска при наведении */
+}
+
+.icon-link {
+    margin-right: 8px;
+}
+
+.icon-copy {
+    margin-right: 8px;
+}
+
+/* Подвал */
+.footer {
+    background-color: #0D0D0D;
+    color: white;
+    padding: 50px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer-left {
+    width: 25%;
+}
+
+.footer-logo {
+    margin-bottom: 20px;
+}
+
+.logo-img {
+    width: 100px; /* Ширина логотипа */
+    height: auto;
+}
+
+.email-text {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.footer-center {
+    text-align: center;
+    width: 80%;
+}
+
+.follow-us {
+    margin-bottom: 20px;
+    margin-left: -890px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover img {
+    transform: scale(1.2); /* Увеличение при наведении */
+}
+
+.footer-right {
+    width: 8%;
+    text-align: left;
+}
+
+.menu-title {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.footer-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-menu li {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.footer-menu li a {
+    text-decoration: none;
+    color: white;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.footer-menu li a .triangle {
+    margin-right: 8px;
+    transition: transform 0.3s ease;
+}
+
+.footer-menu li a:hover {
+    color: #4AD5B7;
+}
+
+.footer-menu li a:hover .triangle {
+    transform: translateX(5px); /* Анимация стрелки при наведении */
+}
+
+.footer-line {
+    margin: 20px 0;
+    border: 0;
+    height: 1px;
+    background: white;
+}
+
+.footer-bottom {
+    text-align: left;
+    font-size: 15px;
+    margin-bottom: -25px;
+}
+
+/* Стили для скролл бара */
+::-webkit-scrollbar {
+    width: 10px; /* Ширина скролл бара */
+}
+
+::-webkit-scrollbar-track {
+    background: linear-gradient(to bottom, #e2e2e2, #ffffff); /* Градиент для фона трека */
+    border-radius: 5px; /* Скругление углов трека */
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #3AE171, #4AD5B8); /* Градиент для скролл бара */
+    border-radius: 5px; /* Скругление углов скролл бара */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #007aff, #4a90e2); /* Градиент при наведении */
+}
