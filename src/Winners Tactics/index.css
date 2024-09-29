@@ -1,0 +1,424 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins",sans-serif;
+}
+
+/* Стили для body */
+ body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    background: url('backgroun3.jpg') no-repeat fixed;
+    background-size: cover;  /* Фон будет покрывать весь экран */
+    overflow-x: hidden;      /* Убираем горизонтальную прокрутку */
+}
+
+/* Шапка сайта */
+.header {
+    width: 100%;
+    padding: 1px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed; /* Фиксируем шапку */
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(30px);
+    box-shadow: 4px 6px rgba(0, 0, 0, 0.1);  /* Небольшая тень для навбара */
+    border-radius: 200px;
+}
+
+/* Логотип */
+.logo-container {
+    flex-shrink: 0;
+    margin-right: 50px;
+    display: inline-block; /* Чтобы ссылка была корректной для блочного контента */
+}
+
+.logo-img {
+    width: 75px !important;
+    height: auto;
+}
+
+/* Навигация */
+.navbar {
+    display: flex;
+    gap: 50px;
+}
+
+.navbar a {
+    position: relative;
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    bottom: -5px;
+    border-radius: 5px;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: .5s ease;
+}
+
+.navbar a:hover::after {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Кнопки авторизации */
+.auth-buttons {
+    display: flex;
+    gap: 16px;
+    margin-left: auto;
+}
+
+.auth-buttons .btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 500;
+    width: 114px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.auth-buttons .login-btn {
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.auth-buttons .join-btn {
+    background: linear-gradient(90deg, #3BE075, #4AD5B7);
+    color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.auth-buttons .login-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    background-color: #f0f0f0;
+}
+
+.auth-buttons .join-btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(90deg, #34D483, #43C9B5);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Бокс с текстом */
+.blurred-box {
+    width: 300px;
+    height: 250px;
+    background: rgba(255, 255, 255, 0.2); /* Полупрозрачный фон */
+    backdrop-filter: blur(5px);  /* Эффект блюра внутри */
+    border-radius: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.3); /* Полупрозрачная обводка */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Тень вокруг */
+    margin-top: 175px;
+    margin-left: 90px;
+    padding: 20px;
+}
+
+.blurred-box p {
+    color: white;
+    font-size: 18px;
+    text-align: left;
+    margin: 0;
+    padding-top: 0;
+}
+
+
+/* Второй блок*/
+.attention-section {
+    background: linear-gradient(90deg, #1C1C1C, #09393A);
+    color: #FFFFFF;
+    text-align: center;
+    padding: 250px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    max-width: 100%;
+    margin: 320px auto 0 auto;
+}
+
+.attention-section h2 {
+    font-size: 42px;
+    margin: 0;
+}
+
+.attention-section p {
+    font-size: 30px;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 600px;
+}
+
+.attention-section .highlight {
+    color: #34CB66;
+}
+
+.attention-img {
+    position: absolute;
+    right: 50px;
+    top: 70%;
+    transform: translateY(-50%);
+    max-width: 300px;
+    height: auto;
+}
+
+/* Секция тактики*/
+.usage-section {
+    background: url('background.png') no-repeat center center/cover;
+    padding: 100px 20px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.top-image img {
+    width: 700px;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 2%;
+}
+
+.copy-btn {
+    background-color: #405D73; /*#34CB66*/
+    color: #FFFFFF;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 18px;
+    display: inline-block;
+    margin-bottom: 40px;
+    transition: background-color 0.3s ease;
+}
+
+.copy-btn:hover {
+    background-color: #344E61; /*#28A357*/
+}
+
+.info-box {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.info-box h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.info-box ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 18px;
+    text-align: left;
+    color: #FFFFFF;
+}
+
+.info-box ul li {
+    margin-bottom: 10px;
+}
+
+.video-text {
+    font-size: 24px;
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Тень для улучшения читаемости */
+}
+
+.video-box {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+}
+
+.video-box iframe {
+    width: 100%;
+    height: 450px;
+    border-radius: 10px;
+}
+
+.next-tactics-btn {
+    background-color: #2F302F; /*#34CB66*/
+    color: #FFFFFF;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-size: 18px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.next-tactics-btn:hover {
+    background-color: #434843; /*#28A357*/
+    transform: scale(1.05);
+}
+
+.next-tactics-btn span {
+    margin-left: 10px;
+}
+
+/* Подвал */
+.footer {
+    background-color: #0D0D0D;
+    color: white;
+    padding: 50px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer-left {
+    width: 25%;
+}
+
+.footer-logo {
+    margin-bottom: 20px;
+}
+
+.logo-img {
+    width: 100px; /* Ширина логотипа */
+    height: auto;
+}
+
+.email-text {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.footer-center {
+    text-align: center;
+    width: 80%;
+}
+
+.follow-us {
+    margin-bottom: 20px;
+    margin-left: -890px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover img {
+    transform: scale(1.2); /* Увеличение при наведении */
+}
+
+.footer-right {
+    width: 8%;
+    text-align: left;
+}
+
+.menu-title {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.footer-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-menu li {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.footer-menu li a {
+    text-decoration: none;
+    color: white;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.footer-menu li a .triangle {
+    margin-right: 8px;
+    transition: transform 0.3s ease;
+}
+
+.footer-menu li a:hover {
+    color: #4AD5B7;
+}
+
+.footer-menu li a:hover .triangle {
+    transform: translateX(5px); /* Анимация стрелки при наведении */
+}
+
+.footer-line {
+    margin: 20px 0;
+    border: 0;
+    height: 1px;
+    background: white;
+}
+
+.footer-bottom {
+    text-align: left;
+    font-size: 15px;
+    margin-bottom: -25px;
+}
+
+/* Стили для скролл бара */
+::-webkit-scrollbar {
+    width: 10px; /* Ширина скролл бара */
+}
+
+::-webkit-scrollbar-track {
+    background: linear-gradient(to bottom, #e2e2e2, #ffffff); /* Градиент для фона трека */
+    border-radius: 5px; /* Скругление углов трека */
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #3AE171, #4AD5B8); /* Градиент для скролл бара */
+    border-radius: 5px; /* Скругление углов скролл бара */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #007aff, #4a90e2); /* Градиент при наведении */
+}
