@@ -95,6 +95,7 @@ ul li {
     text-align: center;
     background-image: url('main_images/image\ 1.png');
     padding: 20px;
+    padding-bottom: 100px;
     width: 100%;
     min-height: 300px;
     color: white;
@@ -166,4 +167,155 @@ ul li {
 
 .character-right {
     margin-left: -20px;
+}
+
+/* Join to clan */
+
+.clan-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 323px;
+    padding-left: 510px;
+    padding-bottom: 200px;
+}
+
+.winners-text {
+    margin-top: 280px;
+    font-size: 80px;
+    font-family: 'Times New Roman', serif;
+    cursor: pointer;
+}
+
+.join-button {
+    margin-top: 200px;
+    width: 337px;
+    height: 131px;
+    font-size: 70px;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(90deg, #66ffa6, #33ffdd);
+    border: none;
+    padding: 15px 60px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    border-radius: 10px;
+    transform: rotate(-10deg) skew(-10deg);
+    color: white;
+}
+
+.join-button:hover {
+    transform: scale(1.1);
+}
+
+/* footer */
+
+.footer {
+    background-color: #0D0D0D;
+    color: white;
+    padding: 50px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer-left {
+    width: 25%;
+}
+
+.footer-logo {
+    margin-bottom: 20px;
+}
+
+.logo-img {
+    width: 100px; /* Ширина логотипа */
+    height: auto;
+}
+
+.email-text {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.footer-center {
+    text-align: center;
+    width: 80%;
+}
+
+.follow-us {
+    margin-bottom: 20px;
+    margin-left: -890px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover img {
+    transform: scale(1.2); /* Увеличение при наведении */
+}
+
+.footer-right {
+    width: 8%;
+    text-align: left;
+}
+
+.menu-title {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.footer-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-menu li {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.footer-menu li a {
+    text-decoration: none;
+    color: white;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.footer-menu li a .triangle {
+    margin-right: 8px;
+    transition: transform 0.3s ease;
+}
+
+.footer-menu li a:hover {
+    color: #4AD5B7;
+}
+
+.footer-menu li a:hover .triangle {
+    transform: translateX(5px); /* Анимация стрелки при наведении */
+}
+
+.footer-line {
+    margin: 20px 0;
+    border: 0;
+    height: 1px;
+    background: white;
+}
+
+.footer-bottom {
+    text-align: left;
+    font-size: 15px;
+    margin-bottom: -25px;
 }
